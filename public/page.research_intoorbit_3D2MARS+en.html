@@ -1,0 +1,112 @@
+<div class="container main">
+
+<iframe style="float:right" width="560" height="315" src="https://www.youtube.com/embed/ujIFkj4xyMo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2>Filament production on Mars for 3D printing <small class="text-muted">#3D2MARS</small></h2>
+<h3>TövisASAP - Research project - Into Orbit 2018-19</h3>
+
+<h3>Research and Problem identification</h3>
+<p>During space travel one has to take a lot of things to Mars and that is very expensive. The Apollo program consumed around 25.4 bn USD. When trying to understand the costs for a space mission we have found that the delivery of 1 kg of material could cost up to is 16,500 USD. Due to redundancy, every devices must be transferred (brought) at least two times, which increases the weight of the shipment and with this also the costs.
+</p>
+
+<p>Several experts we have met have shown us that there is a need to transport a large amount of tools and equipment to the International Space Station as well and how enormous the budget for Rosetta mission was, 1.4 bn EUR, that constrained the useful cargo load as well. Humanity must solve this issue otherwise space missions will be too expensive and we cannot effectively think about Mars missions.
+</p>
+
+<p class="alert alert-primary" role="alert">
+The problem we have identified is: <b>how to cost and weight effectively produce filaments for 3D printing on Mars to enable equipment production and reduce rocket cargo weight from Earth.</b> We need #3D2MARS.
+</p>
+
+<p>Our Experts: During this research project we have received a huge amount of help and insights from our experts from a various fields of science.
+We interviewed <b>Dr. Vizi Pál</b> from <a href="http://wigner.mta.hu" target="_blank">Wigner Physics Research Lab</a> in the <a href="http://csopa.hu" target="_blank">Csodák Palota</a> science exhibition, <b>Dr. Both Előd</b>, the principal of the Hungarian Space Agency, <b>Kovács Viktor</b>, the lead and owner of 3d lab 3D műhely,<a href="http://3dmuhely.hu" target="_blank">3dmuhely.hu<a>, <b>Dr. Bodnár Zsolt</b>, the <a href="http://philament.eu" target="_blank">philament.eu</a> owner and lead of filament producer company and <b>Szűcs László</b>, the scientific lead of <a href="http://plani.hu" target="_blank">Observatory of Kecskemét<a>.
+<br>We have consulted electronic circuits with <b>Dr. Víg Zoltán</b>, the senior lecturer at the <a href="http://uni-obuda.hu" target="_blank">University of Óbuda</a> Kandó Kálmán Electrical Engineer Faculty.
+
+<div class="text-center">
+<img class="img-fluid p-2 rounded" src="img/research/18/both_elod.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/drvizipal.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/kovacsv.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/vig.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/szucslaszlo.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/farkasbertalan.jpg">
+</div>
+
+<h3>Solution</h3>
+<p>Our solution is a filament producer machine that mixes material from Earth and local Mars dust to be able to produce equipment new and spare ones in an effective way on the Mars. 3D printing on Mars can reduce useful cargo need from Earth and provide a solution to this problem.
+Our solution also includes the thread produced by the filament maker. The solution produces filament thread from a mixture of fine powder of Mars's rock and plastic melt. The heater unit melts the material that is fed by a pulley / drillhead into the 3D printer’s head which expells the filament thread.
+</p>
+
+<div class="text-center">
+<img class="img-fluid p-2 rounded" src="img/research/18/3dprinter.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/filament1.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/filament2.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/filament3.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/filamentad1.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/filamentgep1.jpg">
+</div>
+
+
+<h4>Prototyping</h4>
+<p>For our first prototypes we have started melting different kinds of plastics (like plastic spoon) then later on filament PLA material and pulled a thread with tools. Later on we used camping gas stove an then electric stove to reach a controlled 220 C and stated experimenting with PLA plastic mixed with dust.
+<br>One of our experts suggested to explore material physical properties better we also tried sugar fondant mixing with dust allowing us to explore lower temperatures.
+</p>
+
+<div class="text-center">
+<img class="img-fluid p-2 rounded" src="img/research/18/kukorica.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/plagranulatom.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/marspor.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/plahulladek.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/proto1.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/proto2.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/plabiodeg.jpg">
+</div>
+
+
+<h4>Current solution</h4>
+<p>Our current solution is based on an Arduino microcomputer board which has the advantage that we can safely and easily learn and use it.
+<br>An Arduino Uno board, operated at 5V from USB, a DHT-11 temperature sensor / thermistor that switches on and off the heating unit. Today we are aiming for a simple on-off mode using hysteresis. This means that if we want to reach 30 degrees Celsius we switch heating on at 28 C and switch off only at 32 C, reducing the number of switching still controlling the temperature.
+<br>For the material mixing we are building a simple wood drill, metal pipe for housing.
+Later on we will need 210 degrees Celsius for melting the filament material (small variability based on color) for which we will use t Grove - High Temperature Sensor.
+<br>Explored materials: bauxit stone collected and crushed to dust by us. PLA and other plastic waste.
+PLA (PoliLactic Acid) is a plastic that can biodegrade, and can be produced from e.g. corn even on Mars by machines and future colonists.
+</p>
+
+<p>Our current circuit:
+
+<div class="text-center">
+<img class="img-fluid p-2 rounded" src="img/research/18/kapcsolási rajz.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/arduino2.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/arduino3.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/kod.png">
+</div>
+</p>
+
+
+<p>Industrial manufacturing can take place in such a way to test the machine as NASA tests the spacecraft's shipments, for example, its satellites. Earth conditions with a smaller prototype or low ground pitch.
+</p>
+
+<p>We talked to the experts and asked for their opinions, we gave a presentation in the classroom, we talked about this with our families. We wrote about our research project to the experts and ask for their opinion, and ask what kind of constructive advice they have. We are sharing our results with other First Lego League teams as well and try to learn from them also.
+</p>
+
+<h3>Sharing</h3>
+<br>We are sharing our solution with our experts and in our schools with our classmates as well.
+<br>We are sharing our solution and ask for feedback and improvement ideas with FLL teams all over the world. We are honored that we had the chance to talk to <b>Team Cre8te the future</b> from Australia, <b>Team Deep Blue</b> from Turkey, <b>Team Voltage</b> from Turkey, <b>Team Operation F.L.L.</b> from USA.
+<br>We have had phone call and had the chance to meet personally <a href="https://en.wikipedia.org/wiki/Bertalan_Farkas" target="_blank"><b>Farkas Bertalan</b><a> Hungarian cosmonaut in 2019.
+</p>
+
+<h3>Business Plan</h3>
+<p>Our Australian friends, Team Cre8te the future suggested to create a business plan to introduce 3D printing and filament production for contries and areas with less advanced infrastructure.
+<br>Following the advice of the Team Cre8te the Future from Australia we made a business plan for filament thread
+introduction in lower infrastructure areas. Our goal with this plan, that is made to help to the colonization Mars, to turn
+it to the Earth’s inhabitants’ benefit.
+<br>Please <a href="img/research/18/TovisASAP - Into Orbit - Business Plan for 3d2mars.pdf" target="_blank">read our business plan</a> with detailed cost estimates and feel free to contact us with any questions.
+</p>
+
+<div class="text-center">
+<img class="img-fluid p-2 rounded" src="img/research/18/shareoosztaly1.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/shareoosztaly2.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/share_team_cre8tethefuture.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/share_team_deepblue.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/share_team_voltage.jpg">
+<img class="img-fluid p-2 rounded" src="img/research/18/share_team_OperationFLL.jpg">
+</div>
+
+</div>

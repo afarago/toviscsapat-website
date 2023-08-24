@@ -1,0 +1,40 @@
+<!-- sponsor -->
+<a class="anchorfix" id="sponsor"></a>
+<div class="container sponsor_container">
+  <h2>{{#if isHU}}Támogatóink{{else}}Sponsors{{/if}}</h2>
+  <p>
+    {{#if isHU}}
+        Nincs eredmény barátok és segítők nélkül.<br>
+        Hálásak vagyunk mindazoknak a cégeknek, akik anyagilag is segítették csapatunk felkészülését az elmúlt évek alatt, így a tanulásra, robot összeállítására, kutatásra és a csapat építésre tudtunk koncentrálni. Köszönjük!
+    {{else}}
+      There are no results without friends and helping hands.
+      We are grateful for all the companies and individuals who sponsored the team so that we could focus on the learning, robot assembly, programming and reseach. Thank you!
+    {{/if}}
+  </p>
+    <div class="text-center">
+        <a href="https://www.sap.com/index.html" target="_blank"><img src="img/sponsors/sap.png" alt="SAP" class="col-sm-2 p-2" /></a>
+        <a href="https://www.fanuc.eu/hu/en/who-we-are/hu-country-landing-page" target="_blank"><img src="img/sponsors/fanuc.jpg" alt="Fanuc" class="col-sm-2 p-2" /></a>
+        <a href="https://www.ujpest.hu/" target="_blank"><img src="img/sponsors/ujpest.png" alt="Újpest" class="col-sm-2 p-2" /></a>
+        <a href="https://molalapitvany.hu" target="_blank"><img src="img/sponsors/molalapitvany.png" alt="MOL" class="col-sm-2 p-2" /></a>
+        <a href="http://hungary.ni.com/debrecen" target="_blank"><img src="img/sponsors/ni.png" alt="NI" class="col-sm-2 p-2" /></a>
+        <a href="https://www.nng.com" target="_blank" target="_blank"><img src="img/sponsors/nng.png" alt="NNG" class="col-sm-2 p-2" /></a>
+        <a href="https://optoforce.com/" target="_blank"><img src="img/sponsors/optoforce.png" alt="Optoforce" class="col-sm-2 p-2" /></a>
+        <a href="https://www.balabit.com/" target="_blank"><img src="img/sponsors/balabit.png" alt="Balabit" class="col-sm-2 p-2" /></a>
+        <a href="http://www.oiki.hu/" target="_blank"><img src="img/sponsors/oiki.png" alt="OIKI" class="col-sm-2 p-2" /></a>
+        <a href="https://countplus.hu" target="_blank"><img src="img/sponsors/countplus.png" alt="Countplus" class="col-sm-2 p-2" /></a>
+        <a href="https://ravien.hu/" target="_blank"><img src="img/sponsors/ravien.png" class="col-sm-2 p-2" /></a>
+        <a href="https://bluebird.hu/" target="_blank"><img src="img/sponsors/bluebird.png" class="col-sm-2 p-2" /></a>
+        <a href="http://bco.hu/" target="_blank"><img src="img/sponsors/biztcentrum.png" class="col-sm-2 p-2" /></a>
+    </div>
+</div>
+
+
+<script>
+
+//-- setup tamogatokAOS
+$(".sponsor_container img").attr("data-aos", "zoom-out").attr("data-aos-anchor-placement", "top-bottom");
+
+AOS.init();
+AOS.refresh()
+</script>
+
