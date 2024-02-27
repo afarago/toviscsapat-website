@@ -53,7 +53,10 @@ const i18n_en = {
     'összesített': 'overall',
     'Regionális': 'Regional',
     'Kutatás': 'Research',
+    'Innováció': 'Innovation',
+    'Nemzeti döntő': 'National finals',
     'Robotjáték': 'Robot game',
+    'Alapértékek': 'Core Values',
     'pont': 'points',
     'Bajnok': 'Champion',
     'csapat': 'team'
@@ -345,7 +348,7 @@ function addEasterEggHandlers() {
           $logo1.css({transform: transformRot + '(' + now + 'deg)'});
         },
         complete: function() {
-          $logo1.attr('src',src_orig);
+          $logo1.attr('src',src_origT);
           $logo1.data('animating', null);
         }
       });
