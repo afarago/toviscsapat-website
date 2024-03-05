@@ -208,6 +208,7 @@ img[data-toggle='lightbox'] {
   --basecolor: var(--color-main);
   --descriptioncolor: #606060;
   --color-2023fll: #FF007D;
+  --color-2022wro: #CE2817;
   --color-2022fll: #FCD800;
   --color-2021fll: #3D7C3B;
   --color-2021erc: #DE4F3B;
@@ -309,6 +310,11 @@ transition: width 2s, height 4s;
 .main-timeline9 .timeline.year2023fll .timeline-content:before,
 .main-timeline9 .timeline.year2023fll .timeline-content span:before {background-color: var(--color-2023fll)!important;}
 .main-timeline9 .timeline.year2023fll .circle {border-color: var(--color-2023fll)!important;}
+
+.main-timeline9 .timeline.year2022wro .year,
+.main-timeline9 .timeline.year2022wro .timeline-content:before,
+.main-timeline9 .timeline.year2022wro .timeline-content span:before {background-color: var(--color-2022wro)!important;}
+.main-timeline9 .timeline.year2022wro .circle {border-color: var(--color-2022wro)!important;}
 
 .main-timeline9 .timeline.year2022fll .year,
 .main-timeline9 .timeline.year2022fll .timeline-content:before,
