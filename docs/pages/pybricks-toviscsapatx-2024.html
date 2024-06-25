@@ -1,0 +1,191 @@
+<a href="http://pybricks.com" target="_blank"><img class="rounded float-right img-thumbnail m-4"
+        src="img/robot/pybricks0.png"></img></a>
+<h1>
+    Miért épp a pybricks?
+    <small class="text-muted">Gyorstalpaló és ajánló </small>
+</h1>
+
+<p>
+    Az idei évadban az elsőéves FIRST LEGO League csapatunk, a Töviscsapat-X a
+    második legmagasabb pontszámmal jutott tovább a tatabányai elődöntőről az
+    országos döntőre, ahol a 6. helyezést érte el robotfutamban. A WPI Open
+    invitational versenyen folytattuk a versenyzést, ahol a 108 csapatból 49.
+    helyezést értük el 405 ponttal. Nagyon büszkék vagyunk a megtett útra és a
+    tanulásra. A robot programozását ugyan Blockly-ban kezdtük el, de két hét után
+    átváltottunk a szöveg alapú pybricks firmware használatára.
+    <br />Kezdjük egy rövid beszámolóval, hogy Nyitrai Zoli, robot design és
+    dokumentációs vezetőnk hogyan látta ezt.
+</p>
+
+<div class="card bg-light mx-auto" style="max-width: 60rem">
+    <h4 class="card-header">Zoli ajánlója</h4>
+    <div class="card-body">
+        <img class="rounded float-left col-4 mr-3 p-0" src="img/robot/pybricksposter.jpg" />
+        <img class="rounded-circle float-right" src="img/robot/pybricksz.jpg" />
+        <p>
+            Csapatunkkal a FIRST LEGO League, LEGO robotépítő és -programozó versenyen
+            vettünk részt. Az országos döntőben elért eredményünkkel lehetőséget
+            kaptunk az USA-ban rendezett nemzetközi versenyen való részvételre.
+            Robotunk irányításához PyBricks-ben írtuk a programot. Rövid idő alatt kis
+            segítséggel meg tudtuk tanulni az alapokat, hiszen ez a firmware
+            kifejezetten LEGO hub-ok irányítására lett kifejlesztve.
+        </p>
+        <p>
+            Könnyen lehet értelmezni és utasításokat kiadni. A DriveBase használatával
+            hatékonyan és gyorsan mozgatható a robot, mivel nem neked kell
+            összehangolni a motorokat. Szövegalapú, ezért neked csak írni kell és
+            dobálja fel, hogy milyen utasításokból választhatsz, ezáltal nagyon
+            gyorsan lehet programozni. Még az is jó, hogy programozás közben gyorsan
+            és könnyen meg tudod nézni, hogy mit kell odaírni, ha esetleg nem tudnád
+            fejből.
+        </p>
+        <p>
+            Könnyen és gyorsan lehet letölteni Bluetooth segítségével a programot a
+            robotra, így a fejlesztéssel hamar tudsz haladni.
+        </p>
+        <footer class="blockquote-footer">Nyitrai Zoli</footer>
+    </div>
+</div>
+
+<h2 class="pt-4">Attila hands-on bevezetője</h2>
+<p>Folytassunk egy hands-on bevezetővel Attila, a coach szemszögéből.</p>
+
+<p>
+    A pybricks mind EV3, mind SPIKE/Robot Inventor hardware-en használható. Az
+    általunk használt és kedvelt SPIKE hub-on a firmware cseréjével kezdődik a
+    folyamat. Nem nehéz, és nem feltétlenül kell a mélységét megérteni,
+    használatát minden csapattag megtanulta.
+    <br />
+    Ezután a pybricks egy böngészőből programozható felületet ad
+    <a href="http://code.pybricks.com" target="_blank">code.pybricks.com</a>, amit nem kell sem telepíteni, sem
+    regisztrálni benne. A
+    felületen egy kezdőprogram létrehozását a rendszer segíti, ebbe most ne
+    menjünk bele.
+</p>
+
+<pre class="bg-light p-3 rounded border"><code>from pybricks.hubs import InventorHub
+from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor
+from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
+from pybricks.robotics import DriveBase
+from pybricks.tools import wait, StopWatch
+
+hub = InventorHub()
+</code></pre>
+
+<p>
+    A python egészen összetett programok írására is alkalmas, ugyanakkor mi
+    kifejezetten a legegyszerűbb használatra törekedtünk. A pybricks környezetet
+    python nyelven tudjuk programozni, a hub szívében található mikrovezérlő is
+    alapvetően python nyelven beszél velünk (micropython).
+</p>
+
+<p>
+    Ahhoz, hogy megértessük a géppel, hogy mit is szeretnénk a fejlesztők (Laurens
+    Valk és David Lechner) az elérhető funkciókat csoportokba rendezték. Mintha
+    csak dobozkba rendeznénk a rajzainkat téma szerint. Ezek a csoportok pont a
+    fizikailag megfogható eszközök mentén épülnek fel: hub, motor, színszenzor,
+    stb. A csoportokon belül újabb csoportokat is találhatunk a könnyebb
+    kezelhetőség miatt, amiket egy "pont" választ el egymástól (pl. hub.display).
+    Végül majdnem mindig egy-egy függvényt hívunk meg, ugyancsak egy "ponttal"
+    elválasztva és mindenképpen zárójellel végezve.
+</p>
+
+<pre class="bg-light p-3 rounded border"><code>hub.system.beep() # sípol egyet a hub.
+</code></pre>
+
+<p>
+    A függvényhívások ugyanakkor lehetnek ennél bonyolultabbak is, amikor hasonló
+    funkciót, nem pont ugyanazt szeretnénk elérni. Itt paramétereket adunk meg a
+    zárójelek között.
+</p>
+
+<pre class="bg-light p-3 rounded border"><code>hub.display.number(42) # kiírja a hub, hogy 42
+hub.display.number(99) # kiírja a hub, hogy 99
+hub.display.text("Hello FLL, Hello WRO") # kiírja a hub, a szöveget
+</code></pre>
+
+<p>
+    Ahhoz, hogy egy-egy motort is kezeljünk, tudatnunk kell a rendszerrel, hogy
+    itt bizony motorok is vannak! Itt megadjuk azt, hogy hova kapcsoltuk a motort
+    és a forgásirányt.
+</p>
+
+<pre class="bg-light p-3 rounded border"><code>motor_left = Motor(Port.E, Direction.COUNTERCLOCKWISE)
+motor_right = Motor(Port.F, Direction.CLOCKWISE)
+</code></pre>
+
+<p>
+    A két motor ugyanakkor még buta és bár tud forogni időre, fordulatra,
+    célértékre, de ezzel a robotunk lesz túl hatékony. A pybricks ez úgy oldja
+    meg, hogy egy elméleti "robotot" segít létrehozni nekünk - ez esetben két
+    kerékkel, aminek csak a méretét és a távolságát kell megadnunk.
+</p>
+
+<pre class="bg-light p-3 rounded border"><code>robot = DriveBase(motor_left, motor_right, 56, 114) # bal és jobb motor, kis kék kerekekkel 5.6 cm átmérővel és 11.4 cm
+két kerék közötti távolsággal
+</code></pre>
+
+<p>
+    Ezek után a pályán való navigálás egészen könnyen megy, hiszen a rendszer
+    kiszámítja, hogy a lenti műveletekhez a motorokat mennyit kell elforgatni!
+</p>
+
+<pre class="bg-light p-3 rounded border"><code>robot.turn(90) # fordulj jobbra 90 fokot
+robot.straight(100) # menj előre 10 centimétert
+robot.curve(114, 60) # fordulj ívben 60 fokot
+</code></pre>
+
+<p>
+    Ami zseniális ebben, hogy gyorsít, lassit a megbízhatóság érdekében, méri és
+    korrigálja, hogy tényleges annyit fordult-e el, amit kértünk tőle.
+    <br />Természetesen a kerekek megcsúszhatnak, és akkor oda a pontosság. Az
+    egyik lehetőség a falhoz és a tárgyakhoz igazodás, de ezek mellett a gyro
+    használatát is támogatja. Innentől pontosan ugyanazok az utasítások
+    használhatóak, de a beépített gyro szenzor alapján is korrigál.
+</p>
+
+<pre class="bg-light p-3 rounded border"><code>robot.use_gyro(True)
+robot.turn(90) # fordulj jobbra 90 fokot
+robot.straight(100) # menj előre 10 centimétert
+</code></pre>
+
+<p>
+    Ez a hagyományos blocky alapú környezetet nyújtotta lehetőségeket
+    nagyságrendekkel leegyszerűsíti és megbízhatóbbá teszi.
+</p>
+
+<div class="text-center">
+    <div class="col-12 p-0">
+        <img class="img-thumbnail" src="img/robot/pybricks1.png" data-remote="img/robot/pybricks1.png"></img>
+    </div>
+</div>
+
+</div>
+
+<h2 class="pt-4">Köszönetnyilvánítás</h2>
+<p>
+    Hálásak vagyunk a pybricks fejlesztőinek, javasoljuk, hogy ti is próbáljátok
+    ki jövőre. Tudjuk, hogy ezzel a robotfutásban versenyelőnyt vesztünk,
+    ugyanakkor a FIRST LEGO League versenyben számunkra, a Töviscsapat Robotika
+    Műhely számára mindig is a legfontosabb a megosztás és a közös tanulás, és
+    titeket is ennek követésére hívunk!
+</p>
+
+<p>
+    Végül, de nem utolsósorban a pybricks egy rendszeres vagy egyszeri
+    támogatással ugyanezeket a lehetőségeket egy blokkos környezetben is
+    elérhetővé tette. Mi megvettük a license-t, mert oly sokat kaptunk ettől a
+    környezettől és javasoljuk, hogyha tehetotek, ti is támogassátok a pybricks
+    további fejlesztését.
+</p>
+
+<div class="text-center">
+    <div class="col-12 p-0">
+        <img class="img-thumbnail" src="img/robot/pybricks2.png" data-remote="img/robot/pybricks2.png"></img>
+    </div>
+</div>
+
+<hr />
+* bizonyos pontokon a fenti magyarázatban egyszerűsítésekkel élek a jobb
+érthetőség kedvéért. Pár év programozás tanulás után már nem egészen így hívnánk
+ezt, de most a gyorsaságra és a hatékonyságra koncentrálunk!

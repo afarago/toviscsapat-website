@@ -1,0 +1,161 @@
+<a href="http://pybricks.com" target="_blank"><img class="rounded float-right img-thumbnail m-4"
+        src="img/robot/pybricks0.png"></img></a>
+<h1>
+    Why pybricks?
+    <small class="text-muted">Our recommendation and quick tutorial</small>
+</h1>
+
+<p>
+    In this season, our first-year FIRST LEGO League team, Töviscsapat-X, advanced from the Tatabánya semi-finals to the
+    national finals with the second-highest score. At the national finals, we achieved 6th place in the robot game. We
+    continued competing at the WPI Open Invitational WAFFLE in Worcester USA, where we placed 49th out of 108 teams with 405 points. We are very proud of the journey and the learning experience. Although we initially started programming the robot in Blockly, after two weeks we switched to using the text-based pybricks firmware.
+    <br />Let's start with a brief summary from Zoli Nyitrai, our robot design and documentation lead, on his
+    experience.
+</p>
+
+<div class="card bg-light mx-auto" style="max-width: 60rem">
+    <h4 class="card-header">Zoli ajánlója</h4>
+    <div class="card-body">
+        <img class="rounded float-left col-4 mr-3 p-0" src="img/robot/pybricksposter.jpg" />
+        <img class="rounded-circle float-right" src="img/robot/pybricksz.jpg" />
+        <p>
+            Our team participated in the FIRST LEGO League, a LEGO robot building and programming competition. With our
+            results in the national finals, we earned the opportunity to participate in an international competition
+            held in the USA. We wrote the program to control our robot in PyBricks. We were able to learn the basics
+            with little help in a short time since this firmware was specifically developed for controlling LEGO hubs.
+        </p>
+        <p>
+            It is easy to interpret and issue commands. With the use of DriveBase, the robot can be moved efficiently
+            and quickly since you don't have to coordinate the motors yourself. Being text-based, you only need to
+            write, and it suggests commands you can choose from, making programming very fast. Another advantage is that
+            while programming, you can quickly and easily check what to write if you don't know it by heart.
+        </p>
+        <p>
+            You can easily and quickly download the program to the robot using Bluetooth, allowing you to progress
+            rapidly with development. </p>
+        <footer class="blockquote-footer">Nyitrai Zoli</footer>
+    </div>
+</div>
+
+<h2 class="pt-4">Attila hands-on introduction and tutorial</h2>
+<p>Let's continue with our coach's perspective - a hands-on introduction by Attila.</p>
+
+<p>
+    PyBricks can be used on both EV3 and SPIKE/Robot Inventor hardware. On the SPIKE hub, which we use and prefer, the
+    process begins with replacing the firmware. It's not difficult, and understanding it in depth isn't necessary; all
+    team members have learned how to use it.
+    <br />
+    After this, PyBricks provides a programmable interface directly from a browser
+    <a href="http://code.pybricks.com" target="_blank">code.pybricks.com</a>, which requires neither installation nor
+    registration. The interface assists in creating a starter program, but we won't delve into that now.
+</p>
+
+<pre class="bg-light p-3 rounded border"><code>from pybricks.hubs import InventorHub
+from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor
+from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
+from pybricks.robotics import DriveBase
+from pybricks.tools import wait, StopWatch
+
+hub = InventorHub()
+</code></pre>
+
+<p>
+    Python is suitable for writing quite complex programs, but our focus has been on the simplest usage. In the PyBricks
+    environment, we program in Python, and the microcontroller at the heart of the hub communicates with us primarily in
+    Python (MicroPython).
+</p>
+
+<p>
+    To make the hub understand out intentions the creators of pybricks (Laurens Valk and David Lechner) categorized the
+    available features into groups, much like organizing our drawings by theme into boxes. These groups are structured
+    around physically tangible devices: hub, motor, color sensor, etc. Within each group, there are further subdivisions
+    for easier management, separated by a dot (e.g., hub.display). Finally, we typically invoke a specific function,
+    also separated by a dot and always ending with parentheses.
+</p>
+
+<pre class="bg-light p-3 rounded border"><code>hub.system.beep() # hub beeps once.
+</code></pre>
+
+<p>
+    However, function calls can be more complex when we aim to achieve similar but not identical functionality. Here, we
+    provide parameters within the parentheses to specify our intentions.
+</p>
+
+<pre class="bg-light p-3 rounded border"><code>hub.display.number(42) # hub displays number 42
+hub.display.number(99) # hub displays number 99
+hub.display.text("Hello FLL, Hello WRO") # hub displays this text
+</code></pre>
+
+<p>
+    To control each motor individually, we need to inform the system that there are indeed motors involved. Here, we
+    specify where we have connected the motor and its rotation direction.
+</p>
+
+<pre class="bg-light p-3 rounded border"><code>motor_left = Motor(Port.E, Direction.COUNTERCLOCKWISE)
+motor_right = Motor(Port.F, Direction.CLOCKWISE)
+</code></pre>
+
+<p>
+    However, the two motors themselves are still "dumb," capable only of rotating for a certain time, angle, or to a
+    target value. To make our robot more efficient, PyBricks helps us by creating a theoretical "robot" — in this case,
+    one with two wheels, where we only need to specify their size and distance apart.
+</p>
+
+<pre class="bg-light p-3 rounded border"><code>robot = DriveBase(motor_left, motor_right, 56, 114) # left and right motors, small blue diameter 5.6 cm wheels and 11.4 cm axle track
+</code></pre>
+
+<p>
+    After this, navigating on the field becomes quite easy because the system calculates how much the motors need to
+    rotate for the operations below!
+</p>
+
+<pre class="bg-light p-3 rounded border"><code>robot.turn(90) # turn right 90 degrees
+robot.straight(100) # go forward 10 centimeter
+robot.curve(114, 60) # turn in a curve 60 degrees
+</code></pre>
+
+<p>
+    What's brilliant about this is that it accelerates and decelerates for reliability, measures, and corrects to ensure
+    the motors have turned the exact amount we requested.
+    <br />Of course, wheel slippage can affect accuracy. One very good option is aligning to walls and objects. This firmware also supports using the gyro. From here, the same instructions can be used with more precision, with corrections based on the built-in gyro sensor.
+</p>
+
+<pre class="bg-light p-3 rounded border"><code>robot.use_gyro(True)
+robot.turn(90) # turn right 90 degrees
+robot.straight(100) # turn in a curve 60 degrees
+</code></pre>
+
+<p>
+    This environment simplifies possibilities by orders of magnitude compared to the traditional blocky-based system and makes it more reliable.
+</p>
+
+<div class="text-center">
+    <div class="col-12 p-0">
+        <img class="img-thumbnail" src="img/robot/pybricks1.png" data-remote="img/robot/pybricks1.png"></img>
+    </div>
+</div>
+
+</div>
+
+<h2 class="pt-4">Acknowledgement</h2>
+<p>
+    We are grateful to the developers of PyBricks and recommend that you try it out next year. We understand that by
+    publishing this, we may lose some competitive advantage in robot game performance to other teams. However, in the FIRST LEGO League competition, sharing and collective learning have always been the most important values in Tövis Robotics
+    Club and we invite you to follow such sharing as well!
+</p>
+
+<p>
+    Last, but not least, PyBricks has made these capabilities available in a block-based environment via a recurring or
+    one-time payment option. We purchased the license because we gained so much from this framework we simply wanted
+    to pay back and experiment, and we recommend that if you can, you also support the further development of PyBricks.
+</p>
+
+<div class="text-center">
+    <div class="col-12 p-0">
+        <img class="img-thumbnail" src="img/robot/pybricks2.png" data-remote="img/robot/pybricks2.png"></img>
+    </div>
+</div>
+
+<hr />
+* At certain points in the above explanation, I simplify for better understanding. After a few years of learning
+programming, we might not describe it exactly this way, but for now, we focus on speed and efficiency!

@@ -104,7 +104,7 @@ function loadPage(options) {
 
   //-- define AJAX utility functions - 404 page error loading 
   let fnLoadError404Page = function() {
-      $.get("page.404.html").then(function(data){
+      $.get("pages/404.html").then(function(data){
         loadedpage = null;
         $mainContent.html(data); 
         setSPAHandlers($("#mainContent"));
@@ -154,7 +154,7 @@ function loadPage(options) {
   //-- if fragment is not loaded, load it async to mainContent
   let $mainContent = $("#mainContent"); 
   if (loadedpage !== options.page) {
-    let urlToLoad = "page."+options.page+".html";
+    let urlToLoad = "pages/"+options.page+".html";
     $.get(urlToLoad)
     .done(function(data, textStatus, jqXHR) {
       fnLoadPageSuccess(data, textStatus, jqXHR);
@@ -165,7 +165,7 @@ function loadPage(options) {
       //--  then try loading the page in default, as it might have a moustache i18 mode {{#if isHU}}{{/if}} 
       if (hasPageLanguageExtension) {
         let page_base = options.page.replace("+en","");
-        urlToLoad = "page."+page_base+".html";
+        urlToLoad = "pages/"+page_base+".html";
         $.get(urlToLoad)
         .done(function(data, textStatus, jqXHR) {
           fnLoadPageSuccess(data, textStatus, jqXHR);
