@@ -8,8 +8,10 @@
 <p>
     In this season, our first-year FIRST LEGO League team, Töviscsapat-X, advanced from the Tatabánya semi-finals to the
     national finals with the second-highest score. At the national finals, we achieved 6th place in the robot game. We
-    continued competing at the WPI Open Invitational WAFFLE in Worcester USA, where we placed 49th out of 108 teams with 405 points. We are very proud of the journey and the learning experience. Although we initially started programming the robot in Blockly, after two weeks we switched to using the text-based pybricks firmware.
-    <p/>
+    continued competing at the WPI Open Invitational WAFFLE in Worcester USA, where we placed 49th out of 108 teams with
+    405 points. We are very proud of the journey and the learning experience. Although we initially started programming
+    the robot in Blockly, after two weeks we switched to using the text-based pybricks firmware.
+</p>
 <p>
     Let's start with a brief summary from Zoli Nyitrai, our robot design and documentation lead, on his
     experience.
@@ -21,8 +23,8 @@
         <img class="rounded float-left col-4 mr-3 p-0" src="img/robot/pybricksposter.jpg" />
         <img class="rounded-circle float-right" src="img/robot/pybricksz.jpg" />
         <p>
-            Our team participated in the FIRST LEGO League, a LEGO robot building and programming competition. With our
-            results in the national finals, we earned the opportunity to participate in an international competition
+            Our team participated in the FIRST LEGO League, a LEGO robot building and programming competition. Based on
+            our results in the national finals, we earned the opportunity to participate in an international competition
             held in the USA. We wrote the program to control our robot in PyBricks. We were able to learn the basics
             with little help in a short time since this firmware was specifically developed for controlling LEGO hubs.
         </p>
@@ -39,7 +41,7 @@
     </div>
 </div>
 
-<h2 class="pt-4">Attila hands-on introduction and tutorial</h2>
+<h2 class="pt-4">Attila's hands-on introduction and tutorial</h2>
 <p>Let's continue with our coach's perspective - a hands-on introduction by Attila.</p>
 
 <p>
@@ -68,7 +70,7 @@ hub = InventorHub()
 </p>
 
 <p>
-    To make the hub understand out intentions the creators of pybricks (Laurens Valk and David Lechner) categorized the
+    To make the hub understand our intentions the creators of pybricks (Laurens Valk and David Lechner) categorized the
     available features into groups, much like organizing our drawings by theme into boxes. These groups are structured
     around physically tangible devices: hub, motor, color sensor, etc. Within each group, there are further subdivisions
     for easier management, separated by a dot (e.g., hub.display). Finally, we typically invoke a specific function,
@@ -89,7 +91,7 @@ hub.display.text("Hello FLL, Hello WRO") # hub displays this text
 </code></pre>
 
 <p>
-    To control each motor individually, we need to inform the system that there are indeed motors involved. Here, we
+    To control each motor individually, we inform the system that there are indeed motors involved. Here, we
     specify where we have connected the motor and its rotation direction.
 </p>
 
@@ -98,7 +100,7 @@ motor_right = Motor(Port.F, Direction.CLOCKWISE)
 </code></pre>
 
 <p>
-    However, the two motors themselves are still "dumb," capable only of rotating for a certain time, angle, or to a
+    However, the two motors themselves are still "dumb" capable only of rotating for a certain time, angle, or to a
     target value. To make our robot more efficient, PyBricks helps us by creating a theoretical "robot" — in this case,
     one with two wheels, where we only need to specify their size and distance apart.
 </p>
@@ -120,7 +122,9 @@ robot.curve(114, 60) # turn in a curve 60 degrees
 <p>
     What's brilliant about this is that it accelerates and decelerates for reliability, measures, and corrects to ensure
     the motors have turned the exact amount we requested.
-    <br />Of course, wheel slippage can affect accuracy. One very good option is aligning to walls and objects. This firmware also supports using the gyro. From here, the same instructions can be used with more precision, with corrections based on the built-in gyro sensor.
+    <br />Of course, wheel slippage can affect accuracy. One very good option is aligning to walls and objects. This
+    firmware also supports using the gyro. From here, the same instructions can be used with more precision, with
+    corrections based on the built-in gyro sensor.
 </p>
 
 <pre class="bg-light p-3 rounded border"><code>robot.use_gyro(True)
@@ -129,7 +133,8 @@ robot.straight(100) # turn in a curve 60 degrees
 </code></pre>
 
 <p>
-    This environment simplifies possibilities by orders of magnitude compared to the traditional blocky-based system and makes it more reliable.
+    This environment simplifies possibilities by orders of magnitude compared to the traditional blocky-based system and
+    makes it more reliable.
 </p>
 
 <div class="text-center">
@@ -143,7 +148,9 @@ robot.straight(100) # turn in a curve 60 degrees
 <h2 class="pt-4">Acknowledgement</h2>
 <p>
     We are grateful to the developers of PyBricks and recommend that you try it out next year. We understand that by
-    publishing this, we may lose some competitive advantage in robot game performance to other teams. However, in the FIRST LEGO League competition, sharing and collective learning have always been the most important values in Tövis Robotics
+    publishing this, we may lose some competitive advantage in robot game performance to other teams. However, in the
+    FIRST LEGO League competition, sharing and collective learning have always been the most important values in Tövis
+    Robotics
     Club and we invite you to follow such sharing as well!
 </p>
 
