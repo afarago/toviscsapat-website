@@ -207,6 +207,7 @@ img[data-toggle='lightbox'] {
 .main-timeline9 {
   --basecolor: var(--color-main);
   --descriptioncolor: #606060;
+  --color-2024fll: #7bb6c4;
   --color-2024wro: #0089CF;
   --color-2023fll: #FF007D;
   --color-2022wro: #CE2817;
@@ -306,6 +307,11 @@ transition: width 2s, height 4s;
 }
 
 .main-timeline9 .col-lg-6 { padding-right: 1px; padding-left: 1px; }
+
+.main-timeline9 .timeline.year2024fll .year,
+.main-timeline9 .timeline.year2024fll .timeline-content:before,
+.main-timeline9 .timeline.year2024fll .timeline-content span:before {background-color: var(--color-2024fll)!important;}
+.main-timeline9 .timeline.year2024fll .circle {border-color: var(--color-2024fll)!important;}
 
 .main-timeline9 .timeline.year2024wro .year,
 .main-timeline9 .timeline.year2024wro .timeline-content:before,
