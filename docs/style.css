@@ -207,11 +207,13 @@ img[data-toggle='lightbox'] {
 .main-timeline9 {
   --basecolor: var(--color-main);
   --descriptioncolor: #606060;
+  --color-2025educup: #777;
   --color-2024fll: #7bb6c4;
   --color-2024wro: #0089CF;
   --color-2023fll: #FF007D;
   --color-2022wro: #CE2817;
   --color-2022fll: #FCD800;
+  --color-2022educup: #777;
   --color-2021fll: #3D7C3B;
   --color-2021erc: #DE4F3B;
   --color-2021wro: #7BC7FF;
@@ -307,6 +309,30 @@ transition: width 2s, height 4s;
 }
 
 .main-timeline9 .col-lg-6 { padding-right: 1px; padding-left: 1px; }
+
+.main-timeline9 .timeline.year2025educup .year,
+.main-timeline9 .timeline.year2025educup .timeline-content:before,
+.main-timeline9 .timeline.year2025educup .timeline-content span:before {
+  background-color: var(--color-2025educup) !important;
+}
+
+.main-timeline9 .timeline.year2025educup .circle {
+  border-color: var(--color-2025educup) !important;
+}
+
+.main-timeline9 .timeline.year2022educup .year,
+.main-timeline9 .timeline.year2022educup .timeline-content:before,
+.main-timeline9 .timeline.year2022educup .timeline-content span:before {
+  background-color: var(--color-2022educup) !important;
+}
+.main-timeline9 .timeline.year2022educup .circle {
+  border-color: var(--color-2022educup) !important;
+}
+
+.main-timeline9 .timeline.year2024fll .year,
+.main-timeline9 .timeline.year2024fll .timeline-content:before,
+.main-timeline9 .timeline.year2024fll .timeline-content span:before {background-color: var(--color-2024fll)!important;}
+.main-timeline9 .timeline.year2024fll .circle {border-color: var(--color-2024fll)!important;}
 
 .main-timeline9 .timeline.year2024fll .year,
 .main-timeline9 .timeline.year2024fll .timeline-content:before,
