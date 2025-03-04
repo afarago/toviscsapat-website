@@ -138,11 +138,12 @@ img[data-toggle='lightbox'] {
 .sajto p {
 	font-size: 70%;
 	line-height: 20px;
-  color: #999;
+  color: #777;
+  font-weight: bold;
 }
 .sajto p span {
   display: block;
-  color: #ddd;
+  color: #aaa;
 }
 
 .tamogatok_container img {
