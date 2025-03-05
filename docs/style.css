@@ -20,7 +20,7 @@ html {
 	display: none;
 }
 #mainContent {
-  padding-top: 20px;
+  padding-top: 4em; /* 20px - due to banner */
   padding-bottom: 20px;
 }
 body { 
