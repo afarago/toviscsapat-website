@@ -1,8 +1,9 @@
 html {
   --color-main: #CCFF00;
 }
-.indexpage header {
+.indexpage#header {
 	padding: 66px 0px 10px;
+  padding-top: 10em;
 }
 #mainContent, #header {
   background-color: rgba(255,255,255,0.9);
@@ -19,8 +20,10 @@ html {
 .subpage header .container {
 	display: none;
 }
+#header {
+  padding-top: 10em;
+}
 #mainContent {
-  padding-top: 4em; /* 20px - due to banner */
   padding-bottom: 20px;
 }
 body { 
@@ -418,6 +421,19 @@ transition: width 2s, height 4s;
 .main-timeline9 .timeline.year2014 .circle {border-color: var(--color-2014)!important;}
 
 .img-thumbnail.transparent { background-color:transparent; border-color: transparent; }
+
+
+.banner .banner_sponsors img {
+  max-height: 3em;
+  max-width: 6em;
+  margin: 0.4em
+}
+
+.sponsor_container img {
+  max-width: 14em;
+  max-height: 7em;
+  padding: 1em;
+}
 
 /******************* Printing *****************/
 
