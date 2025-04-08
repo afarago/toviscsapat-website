@@ -442,11 +442,11 @@ transition: width 2s, height 4s;
     grid-template-columns: min-content 1fr min-content;
     column-gap: 1em;
     max-width: 100vw;
-    padding-block: 0.5em
+    padding-top: 0.5em
 }
 
 @media 
-  only screen and (max-width:576px){
+  only screen and (max-width:1200px){
   .banner  {
     grid-template-columns: none !important;
   }
