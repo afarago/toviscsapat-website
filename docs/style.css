@@ -182,7 +182,7 @@ img[data-toggle='lightbox'] {
   }
   .carousel .subheading {
     font-size: 0.9rem;
-  }  
+  }
 }
 @media 
   only screen and (max-width:470px){
@@ -434,6 +434,27 @@ transition: width 2s, height 4s;
   max-height: 7em;
   padding: 1em;
 }
+
+.banner {
+    background-color: rgb(68, 68, 68);
+    padding-inline: 0px;
+    display: grid;
+    grid-template-columns: min-content 1fr min-content;
+    column-gap: 1em;
+    max-width: 100vw;
+    padding-block: 0.5em
+}
+
+@media 
+  only screen and (max-width:576px){
+  .banner  {
+    grid-template-columns: none !important;
+  }
+  .carousel .subheading {
+    font-size: 0.9rem;
+  }
+}
+
 
 /******************* Printing *****************/
 
