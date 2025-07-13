@@ -211,6 +211,7 @@ img[data-toggle='lightbox'] {
 .main-timeline9 {
   --basecolor: var(--color-main);
   --descriptioncolor: #606060;
+  --color-2025wro: rgb(90,85,188);
   --color-2025educup: #777;
   --color-2024fll: #7bb6c4;
   --color-2024wro: #0089CF;
@@ -314,12 +315,20 @@ transition: width 2s, height 4s;
 
 .main-timeline9 .col-lg-6 { padding-right: 1px; padding-left: 1px; }
 
+.main-timeline9 .timeline.year2025wro .year,
+.main-timeline9 .timeline.year2025wro .timeline-content:before,
+.main-timeline9 .timeline.year2025wro .timeline-content span:before {
+  background-color: var(--color-2025wro) !important;
+}
+.main-timeline9 .timeline.year2025wro .circle {
+  border-color: var(--color-2025wro) !important;
+}
+
 .main-timeline9 .timeline.year2025educup .year,
 .main-timeline9 .timeline.year2025educup .timeline-content:before,
 .main-timeline9 .timeline.year2025educup .timeline-content span:before {
   background-color: var(--color-2025educup) !important;
 }
-
 .main-timeline9 .timeline.year2025educup .circle {
   border-color: var(--color-2025educup) !important;
 }
@@ -332,6 +341,11 @@ transition: width 2s, height 4s;
 .main-timeline9 .timeline.year2022educup .circle {
   border-color: var(--color-2022educup) !important;
 }
+
+.main-timeline9 .timeline.year2024fll .year,
+.main-timeline9 .timeline.year2024fll .timeline-content:before,
+.main-timeline9 .timeline.year2024fll .timeline-content span:before {background-color: var(--color-2024fll)!important;}
+.main-timeline9 .timeline.year2024fll .circle {border-color: var(--color-2024fll)!important;}
 
 .main-timeline9 .timeline.year2024fll .year,
 .main-timeline9 .timeline.year2024fll .timeline-content:before,
